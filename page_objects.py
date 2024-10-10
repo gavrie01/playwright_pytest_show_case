@@ -1,0 +1,10 @@
+test_url = 'https://symonstorozhenko.wixsite.com/website-1' # landing page, where we start
+text_contact_us = "123-456-7890"
+validate_text_contact_us = "123-456-7890"                   # check if click 'contact us' is done as expected
+name = "Elena"                                              # test name
+city = "Berlin"                                             # test city
+email = "example@example.com"                               # test email
+phone = "123456789"                                         # test phone
+subject = "reclamation"                                     # test subject
+message = "Testing the functionality"                       # test message
+validate_request_submit = "Thanks for submitting!"          # check if 'submit' button works as expected
