@@ -15,7 +15,7 @@ python playwright pytest automation example
 
 3. So, the repo demonstrates understanding of project structure. In a nutshell:
 
-'''
+```
 playwright_pytest_show_case/
 ├── README.md                        # here we go
 ├── test                             # a folder with test cases, I have here just one .py with all test cases
@@ -23,7 +23,8 @@ playwright_pytest_show_case/
 ├── conftest.py                      # file with fixtures, always has this name
 ├── page_objects.py                  # constant variables are defined here for better readability and faster changes. Name is reserved as well
 ├── pytest.ini                       # execution settings
-'''
+
+```
 
 4. I use:
 * python
