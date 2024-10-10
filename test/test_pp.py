@@ -1,4 +1,6 @@
 import pytest
+from page_objects  import * 
+  
 
 # enables proper handling of async functions, ensuring that they run in an event loop
 # event loop is responsible for executing asynchronous code, coordinating the execution of multiple tasks, and managing the overall flow of an application
@@ -11,13 +13,13 @@ async def test_open_start_page(setup_page):  # as an input it uses 'setup_page' 
 
 # do click on 'Contact Us' link
 @pytest.mark.asyncio
-async def contact_us_verification(setup_page):
+async def test_address_verification(setup_page):
     page = setup_page  
     locator = page.get_by_text(text_contact_us)  
     text_content = await locator.text_content()
     assert text_content == validate_text_contact_us, f"Text did not match: {text_content}"
 
-# fill in parameters, click 'Submit' button and check request was submitted (UI level)
+# fill in parameters, click 'Submit' button and check request was submitted (UI)
 @pytest.mark.asyncio
 async def test_submit_form(submit_contact_us_form):
     page = submit_contact_us_form

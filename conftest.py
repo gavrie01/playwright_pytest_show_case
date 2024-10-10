@@ -10,7 +10,7 @@ from playwright.async_api import TimeoutError       # to catch the situation whe
 @pytest_asyncio.fixture()                            # decorator indicates it is a coroutine (cooperative (through yielding) routine (function))
 async def browser():
     async with async_playwright() as p:              # 'async with' is for correct start and shutdown in async mode: when the block is finished, resources are released
-        browser = await p.chromium.launch(headless=False)     # I use chromium browser, GUI is visible
+        browser = await p.chromium.launch(headless=True)     # I use chromium browser, GUI is visible
         # Yield: The control is passed to the test / another fixture that depends on this one. This allows a test / fixtures to run while the browser is available
         yield browser             
         await browser.close() # once yield is ready close the browser

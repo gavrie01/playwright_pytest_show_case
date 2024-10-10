@@ -31,8 +31,10 @@ playwright_pytest_show_case/
 * playwright
 * pytest
 * asyncio
+* pytest-html 
+
 
 5. Test cases are executed with the command: pytest --html=report.html --self-contained-html
-So as a result we get a report with details and statistics
+So as a result we get a report with details and statistics. Open with any browser
 
 6. Let us go and check how all this lives together
