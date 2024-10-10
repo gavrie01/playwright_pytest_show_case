@@ -1,6 +1,5 @@
 test_url = 'https://symonstorozhenko.wixsite.com/website-1' # landing page, where we start
 text_contact_us = "123-456-7890"
-validate_text_contact_us = "123-456-7890"                   # check if click 'contact us' is done as expected
 name = "Elena"                                              # test name
 city = "Berlin"                                             # test city
 email = "example@example.com"                               # test email

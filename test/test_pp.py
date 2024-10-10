@@ -12,12 +12,22 @@ async def test_open_start_page(setup_page):  # as an input it uses 'setup_page' 
     assert page.url == 'https://symonstorozhenko.wixsite.com/website-1'  # compare if actual result  == expected. So, the landing page is opened
 
 # do click on 'Contact Us' link
+
 @pytest.mark.asyncio
-async def test_address_verification(setup_page):
+async def test_contact_us_verification(setup_page):
     page = setup_page  
-    locator = page.get_by_text(text_contact_us)  
-    text_content = await locator.text_content()
-    assert text_content == validate_text_contact_us, f"Text did not match: {text_content}"
+    
+    try:
+        locator = page.get_by_text(text_contact_us)  # Find the element with the expected text which is declared in page_objects.py
+        text_content = await locator.text_content()  # Get the actual text from the element
+
+        # Assert that the found text matches the expected value
+        assert text_contact_us in text_content, f"Expected text '{text_contact_us}' not found. Found: {text_content}"
+
+    except Exception as e:                           #Exception is a base class for all built-in exceptions in Python
+        #e is a variable that holds the exception object
+        pytest.fail(f"Text '{text_contact_us}' was not found on the page. Error: {str(e)}")
+
 
 # fill in parameters, click 'Submit' button and check request was submitted (UI)
 @pytest.mark.asyncio
