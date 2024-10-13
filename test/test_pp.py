@@ -47,3 +47,11 @@ async def test_submit_form(submit_contact_us_form):
     except TimeoutError:
         print("Confirmation message not found after CAPTCHA solving.")
         raise AssertionError("Confirmation message not visible after CAPTCHA was solved")
+    
+
+
+@pytest.mark.asyncio
+async def test_create_new_user(create_new_user):
+    page = create_new_user
+    locator = page.get_by_text('Already a member?')
+    assert await locator.is_visible(), "Text not found on the page"

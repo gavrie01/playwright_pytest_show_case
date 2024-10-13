@@ -66,3 +66,13 @@ async def submit_contact_us_form(submit_form):
     # screenshot after processing, let us think it is a debugging tool for this specific test
     await page.screenshot(path='./after_processing.png')
     yield page
+
+
+@pytest_asyncio.fixture()
+async def create_new_user(submit_form):
+    page = submit_form
+
+    await page.get_by_role("button", name = "Log in").click()
+    await page.get_by_role("button", name = "Sign up with email").click()
+    yield page
+    
